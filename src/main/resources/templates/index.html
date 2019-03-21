@@ -1,22 +1,12 @@
 <!DOCTYPE html>
-<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/default">
+<head lang="pl">
     <title>PrinterHub</title>
-
-    <link href="/webjars/materializecss/0.96.0/css/materialize.css" type="text/css" rel="stylesheet"
-          media="screen,projection"/>
 </head>
 <body>
-    <nav>
-        <div class="nav-wrapper indigo fixed">
-            <ul class="center">
-                <i class="text-white">PrinterHub - Aplikacja do zarządzania usługami drukarskimi</i>
-            </ul>
-        </div>
-    </nav>
+<div class="row" layout:fragment="content">
 
     <h3 class="indigo-text center">Strona w budowie</h3>
 
@@ -36,9 +26,21 @@
                 <span class="title">Krzysztof Miarczyński</span>
             </li>
         </ul>
+        <div class="row">
+            <div class="col s6">
+                <form action="/register" method="get" class="center">
+                    <button class="btn waves-effect waves-light" type="submit">Rejestracja</button>
+                </form>
+            </div>
+            <div class="col s6">
+                <form action="/userList" method="get" class="center">
+                    <button class="btn waves-effect waves-light" type="submit">Lista użytkowników</button>
+                </form>
+            </div>
+        </div>
     </div>
 
-<script src="/webjars/jquery/2.1.4/jquery.js"></script>
-<script src="/webjars/materializecss/0.96.0/js/materialize.js"></script>
+
+</div>
 </body>
 </html>
