@@ -1,0 +1,25 @@
+.main-navbar{
+    background-color: grey;
+    color: whitesmoke;
+    font-size:150%;
+}
+.sticky-top{
+    padding-left:0px;
+    padding-right:0px
+}
+
+.nav-menu-icon{
+    width:5%;
+    height:5%;
+}
+
+.menu-href:hover{
+    text-decoration: none;
+}
+.main-logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 80%;
+}
