@@ -23,7 +23,7 @@ public class Comment {
     private User user;
 
     @OneToOne
-    @JoinColumn(name = "dispute")
+    @JoinColumn(name = "id_dispute")
     private Dispute dispute;
 
     public Comment() {
