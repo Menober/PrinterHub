@@ -147,6 +147,6 @@ public class User {
 
     @Override
     public String toString() {
-        return firstName + " " + lastName + " ma piniendzy -> " + account.getTokens();
+        return firstName + " " + lastName + " ma " + account.getTokens() + " tokenów.";
     }
 }
