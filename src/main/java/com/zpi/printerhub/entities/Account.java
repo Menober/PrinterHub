@@ -8,8 +8,8 @@ public class Account {
 
     @Id
     @GeneratedValue
-    @Column(name = "account_id")
-    private Long accountId;
+    @Column(name = "id_account")
+    private Long idAccount;
 
     @Column(name = "tokens")
     private int tokens;
@@ -17,12 +17,12 @@ public class Account {
     public Account() {
     }
 
-    public Long getAccountId() {
-        return accountId;
+    public Long getIdAccount() {
+        return idAccount;
     }
 
-    public void setAccountId(Long accountId) {
-        this.accountId = accountId;
+    public void setIdAccount(Long idAccount) {
+        this.idAccount = idAccount;
     }
 
     public int getTokens() {

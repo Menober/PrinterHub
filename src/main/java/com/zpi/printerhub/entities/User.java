@@ -9,20 +9,20 @@ public class User {
 
     @Id
     @GeneratedValue
-    @Column(name = "user_id")
-    private Long userId;
+    @Column(name = "id_user")
+    private Long idUser;
 
     @Column(name = "password")
     private String password;
 
-    @Column(name = "surname")
-    private String surname;
+    @Column(name = "first_name")
+    private String firstName;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "last_name")
+    private String lastName;
 
-    @Column(name = "index_number")
-    private int indexNumber;
+    @Column(name = "student_no")
+    private int studentNo;
 
     @Column(name = "email")
     private String email;
@@ -33,25 +33,28 @@ public class User {
     @Column(name = "room")
     private String room;
 
-    @Column(name = "register_date")
-    private Date registerDate;
+    @Column(name = "registration_date")
+    private Date registrationDate;
+
+    @Column(name = "is_active")
+    private boolean isActive;
 
     @Column(name = "is_deleted")
     private boolean isDeleted;
 
     @OneToOne
-    @JoinColumn(name = "fk_account_id")
+    @JoinColumn(name = "id_account")
     private Account account;
 
     public User() {
     }
 
-    public Long getUserId() {
-        return userId;
+    public Long getIdUser() {
+        return idUser;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setIdUser(Long idUser) {
+        this.idUser = idUser;
     }
 
     public String getPassword() {
@@ -62,28 +65,28 @@ public class User {
         this.password = password;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getName() {
-        return name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public int getIndexNumber() {
-        return indexNumber;
+    public int getStudentNo() {
+        return studentNo;
     }
 
-    public void setIndexNumber(int indexNumber) {
-        this.indexNumber = indexNumber;
+    public void setStudentNo(int studentNo) {
+        this.studentNo = studentNo;
     }
 
     public String getEmail() {
@@ -110,12 +113,20 @@ public class User {
         this.room = room;
     }
 
-    public Date getRegisterDate() {
-        return registerDate;
+    public Date getRegistrationDate() {
+        return registrationDate;
     }
 
-    public void setRegisterDate(Date registerDate) {
-        this.registerDate = registerDate;
+    public void setRegistrationDate(Date registrationDate) {
+        this.registrationDate = registrationDate;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
     }
 
     public boolean isDeleted() {
@@ -136,6 +147,6 @@ public class User {
 
     @Override
     public String toString() {
-        return surname + " " + name + " ma piniendzy -> " + account.getTokens();
+        return firstName + " " + lastName + " ma piniendzy -> " + account.getTokens();
     }
 }
