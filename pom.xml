@@ -10,15 +10,22 @@
     </parent>
     <groupId>com.zpi</groupId>
     <artifactId>printerhub</artifactId>
+    <packaging>war</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <name>PrinterHub</name>
     <description>Application for managing print services</description>
 
     <properties>
         <java.version>1.8</java.version>
+        <start-class>com.zpi.printerhub.PrinterHubApplication</start-class>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -64,7 +71,7 @@
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>jquery</artifactId>
-            <version>2.1.4</version>
+            <version>3.3.1</version>
         </dependency>
     </dependencies>
 
@@ -76,5 +83,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
