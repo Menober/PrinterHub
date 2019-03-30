@@ -17,6 +17,7 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <start-class>com.zpi.printerhub.PrinterHubApplication</start-class>
     </properties>
 
     <dependencies>
@@ -82,5 +83,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
