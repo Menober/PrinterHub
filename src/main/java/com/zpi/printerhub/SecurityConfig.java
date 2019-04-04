@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -23,8 +24,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/", "/static/**", "/webjars/**", "/resources/**", "static/favicon.ico",
-                        "**.js","/login**", "/", "/register*", "/terms").permitAll()
+                .antMatchers("/",  "/login**", "/", "/register*", "/terms").permitAll()
                 .antMatchers("/userList*").hasRole("USER")
                 .anyRequest().authenticated()
                 .and()
@@ -39,6 +39,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutUrl("/perform_logout")
                 .logoutSuccessUrl("/");
 
+    }
+
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+        web
+                .ignoring()
+                .antMatchers("/resources/**", "/h2-console/**", "/webjars/**");
     }
 
     @Override
